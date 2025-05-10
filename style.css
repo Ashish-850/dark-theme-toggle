@@ -1,20 +1,66 @@
-:root{
-    --light:#ffffff;
-    --dark:#000000;
-    --grey:#f0f0f0;
+:root {
+  --light: #ffffff;
+  --dark: #000000;
+  --grey: #f0f0f0;
 }
 
-body{
-    background-color: var(--light);
-    color: var(--dark);
-    font-size: 20px;
-    font-family: sans-serif;
-    padding: 2rem;
-    transition: all 1.0s ease-in-out ;
+body {
+  background-color: var(--light);
+  color: var(--dark);
+  font-size: 20px;
+  font-family: sans-serif;
+  padding: 2rem;
+  transition: all 1s ease-in-out;
 }
 
 body.dark {
   --light: #0C0C1E;
   --grey: #060714;
   --dark: #FBFBFB;
+}
+
+/* Toggle Switch Styles */
+.switch {
+  position: relative;
+  display: inline-block;
+  width: 60px;
+  height: 34px;
+}
+
+.switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.slider {
+  position: absolute;
+  cursor: pointer;
+  background-color: #ccc;
+  border-radius: 34px;
+  top: 0;
+  right: 0;
+  left: 0;
+  bottom: 0;
+  transition: 0.4s;
+}
+
+.slider:before {
+  position: absolute;
+  content: "";
+  height: 26px;
+  width: 26px;
+  left: 4px;
+  bottom: 4px;
+  background-color: white;  /* Important */
+  border-radius: 50%;
+  transition: 0.4s;
+}
+
+.switch input:checked + .slider {
+  background-color: #2196F3;
+}
+
+.switch input:checked + .slider:before {
+  transform: translateX(26px);
 }
